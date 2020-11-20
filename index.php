@@ -20,9 +20,6 @@
       (function() {
         fireFlies({"number_flies": 200, "color": "#F6B142", "size":"40" ,"elem": ".effects"});
       })();
-      (function() {
-        fireFlies({"number_flies": 200, "color": "#F6B142", "size":"40" ,"elem": ".effects1"});
-      })();
       AOS.init();
 </script>
 </html>

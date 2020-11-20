@@ -14,6 +14,16 @@ body {
   font-family: baseFont;
 }
 
+.navbar .mobile {
+  display: none;
+}
+
+.navbar .desktop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 mark {
   background: none;
   color: #cb2f2a;
@@ -608,7 +618,7 @@ mark {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 10px;
+  padding: 2px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -627,9 +637,6 @@ mark {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   justify-items: center;
   margin: auto;
   -ms-grid-columns: 1fr 1fr;
@@ -639,6 +646,8 @@ mark {
 .contact__left {
   background-color: rgba(0, 0, 0, 0.612);
   padding: 30px;
+  height: 600px;
+  min-height: 600px;
 }
 
 .contact__evilwizard {
@@ -710,7 +719,8 @@ mark {
   margin-left: -7px;
 }
 
-.contact__form input, .contact__form textarea {
+.contact__form input,
+.contact__form textarea {
   width: 100%;
   padding: 10px;
   background: #50505085;
@@ -722,19 +732,23 @@ mark {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.contact__form input::-webkit-input-placeholder, .contact__form textarea::-webkit-input-placeholder {
+.contact__form input::-webkit-input-placeholder,
+.contact__form textarea::-webkit-input-placeholder {
   color: white;
 }
 
-.contact__form input:-ms-input-placeholder, .contact__form textarea:-ms-input-placeholder {
+.contact__form input:-ms-input-placeholder,
+.contact__form textarea:-ms-input-placeholder {
   color: white;
 }
 
-.contact__form input::-ms-input-placeholder, .contact__form textarea::-ms-input-placeholder {
+.contact__form input::-ms-input-placeholder,
+.contact__form textarea::-ms-input-placeholder {
   color: white;
 }
 
-.contact__form input::placeholder, .contact__form textarea::placeholder {
+.contact__form input::placeholder,
+.contact__form textarea::placeholder {
   color: white;
 }
 
@@ -787,8 +801,8 @@ mark {
 
 .studio__desc p {
   width: auto;
+  font-family: baseFont;
   padding: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .studio__logos {
@@ -801,5 +815,155 @@ mark {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+/*  Device = Tablets, Ipads (portrait)
+    Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .studio {
+    max-width: 800px;
+  }
+  .about {
+    background-size: contain;
+    height: 40vh;
+  }
+  .introduction {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .introduction__image {
+    text-align: center;
+  }
+  .introduction__desc {
+    text-align: center;
+  }
+  .introduction__desc h1 {
+    background-position: center;
+  }
+  .introduction__desc p {
+    margin: auto;
+    font-size: 20px;
+    max-width: 800px;
+    text-align: justify;
+  }
+  .contact {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: auto;
+  }
+  .contact__container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 800px;
+  }
+  .contact__container div {
+    width: 800px;
+  }
+  .contact__socials > iframe {
+    width: 800px !important;
+  }
+  .gallery {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    max-width: 800px;
+    height: auto;
+  }
+  .gallery__heading {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 2;
+    grid-column: 1/3;
+  }
+  .team {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .team__header {
+    -ms-grid-column: 1;
+    grid-column: 1/1;
+  }
+  .team__card p {
+    font-size: 20px;
+  }
+  .team__card h1 {
+    font-size: 32px;
+  }
+  .team__card h2 {
+    font-size: 24px;
+  }
+  .meet {
+    background-size: cover;
+  }
+}
+
+/* 
+  Device = Low Resolution Tablets, Mobiles (Landscape)
+  Screen = B/w 481px to 767px
+*/
+/* 
+  Device = Most of the Smartphones Mobiles (Portrait)
+  Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .navbar {
+    display: none;
+  }
+  .navbar .mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .navbar .navbar .desktop {
+    display: none;
+  }
+  .side {
+    display: none;
+  }
+  .studio {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .studio__desc {
+    padding: 20px;
+    text-align: center;
+  }
+  .studio__logos {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .studio__logos img {
+    padding: 20px;
+  }
+  .about {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    height: auto;
+    padding: 20px;
+  }
+  .about div {
+    margin: 0;
+    padding: 20px;
+    max-width: 800px;
+  }
+  .features {
+    max-width: 800px;
+  }
+  .features__container {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 800px;
+    padding: 20px;
+  }
+  .introduction {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    max-width: 800px;
+    padding: 30px 20px;
+  }
+  .introduction__image {
+    max-width: 345px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
