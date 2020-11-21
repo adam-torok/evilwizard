@@ -754,9 +754,7 @@ mark {
   Screen = B/w 481px to 767px
 */
 
-@media (min-width: 481px) and (max-width: 767px) {
-   
-}
+@media (min-width: 481px) and (max-width: 767px) {}
 
 /* 
   Device = Most of the Smartphones Mobiles (Portrait)
@@ -764,60 +762,173 @@ mark {
 */
 
 @media (min-width: 320px) and (max-width: 480px) {
-   .navbar {
-       display: none;
-        .mobile {
-            display: flex;
-        }
 
-        .navbar {
-            .desktop {
-                display: none;
-            }
-        }
-    }
-
-    .side{
+    .navbar {
         display: none;
     }
-    .studio{
+
+    #landing-logo {
+        width: 320px;
+    }
+
+    .side {
+        display: none;
+    }
+
+    .studio {
         grid-template-columns: 1fr;
-        &__desc{
+
+        &__desc {
             padding: 20px;
+            font-size: 22px;
             text-align: center;
         }
-        &__logos{
+
+        &__logos {
             flex-direction: column;
-            & img{
+
+            & img {
                 padding: 20px;
             }
         }
+
+        &__logos :nth-child(2) {
+            display: none;
+        }
     }
-    .about{
+
+    .meet {
+        background-position: center;
+        background-size: cover;
+
+        & .spider {
+            display: none;
+        }
+    }
+
+    .about {
         grid-template-columns: 1fr;
         height: auto;
         padding: 20px;
-        & div{
+
+        & div {
             margin: 0;
-            padding: 20px;
             max-width: 800px;
         }
     }
-    .features{
+
+    .features {
         max-width: 800px;
-        &__container{
+
+        &__container {
             grid-template-columns: 1fr;
             max-width: 800px;
             padding: 20px;
+            gap: 5px;
         }
+
+        & .feature {
+            & p {
+                padding: 20px;
+                margin: 0;
+            }
+        }
+
     }
-    .introduction{
+
+    .introduction {
         grid-template-columns: 1fr;
         max-width: 800px;
         padding: 30px 20px;
-        &__image{
+
+        &__image {
             max-width: 345px;
+
+            & img {
+                width: 100%;
+            }
+        }
+
+        &__desc>h1 {
+            padding: 10px 55px;
+            text-align: center;
+            background-position: center;
         }
     }
-    
+
+    .contact {
+        height: auto;
+
+        &__container {
+            grid-template-columns: 1fr;
+            padding: 20px;
+        }
+
+        &__header {
+            background-position: top;
+        }
+
+        &__left {
+            height: auto;
+        }
+
+        &__socials {
+            & iframe {
+                width: 370px !important;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        padding: 20px;
+        height: auto;
+
+        &__heading {
+            grid-column: 1/3;
+        }
+    }
+
+    .team {
+        padding: 20px;
+        grid-template-columns: 1fr;
+
+        &__header {
+            grid-column: 1/1;
+            margin: 5px;
+        }
+
+        &__card {
+            grid-template-columns: 1fr;
+            height: auto;
+            padding: 10px;
+        }
+    }
+
+    blockquote {
+        text-align: center;
+    }
+
+    .member {
+        &__social {
+            justify-items: center;
+            justify-content: center;
+        }
+    }
+
+    .smartphoto-arrow-right {
+        transform: scaleX(-0.8);
+        right: 5px !important;
+    }
+
+    .smartphoto-arrow-left {
+        left: 5px !important;
+        transform: scale(0.8);
+    }
+
+    .smartphoto-arrows {
+        top: 75% !important;
+    }
+
 }
