@@ -1,4 +1,19 @@
 $('document').ready(function() {
+
+    var navbar = document.querySelector(".navbar")
+    var ham = document.querySelector(".navbar__hamburger")
+    ham.addEventListener("click", toggleHamburger)
+    function toggleHamburger(){
+        navbar.classList.toggle("showNav")
+        ham.classList.toggle("showClose")
+    }
+    var menuLinks = document.querySelectorAll(".navbar__item")
+    menuLinks.forEach( 
+    function(menuLink) { 
+        menuLink.addEventListener("click", toggleHamburger) 
+    }
+    )
+
     $('.loader').delay(2000).fadeOut('slow');
 
     let bg = document.getElementById('bg');
