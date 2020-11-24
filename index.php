@@ -8,6 +8,7 @@
     <?php include_once('components/landing.html'); ?>
     <?php include_once('components/socials.html'); ?>
     <?php include_once('components/footer.html'); ?>
+    <?php include_once('components/modal.html'); ?>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/smartphoto@1.1.0/js/smartphoto.min.js"></script>

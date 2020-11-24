@@ -63,7 +63,7 @@
       <h1>Humor</h1>
       <img
         class="feature__img"
-        src="assets/images/wizard/wizard_normal.png"
+        src="assets/images/wizard/humor.png"
         alt="Image of the Evil Wizard when he is idle"
       />
       <p>
@@ -75,7 +75,7 @@
       <h1>Elements</h1>
       <img
         class="feature__img"
-        src="assets/images/wizard/wizard_dmg.png"
+        src="assets/images/wizard/elements.png"
         alt="Image of the Evil Wizard when he is damaged"
       />
       <p>
@@ -88,7 +88,7 @@
       <h1>Action</h1>
       <img
         class="feature__img"
-        src="assets/images/wizard/wizard_sup.png"
+        src="assets/images/wizard/action.png"
         alt="Image of the Evil Wizard when its suprised"
       />
       <p>
@@ -171,19 +171,21 @@
           <i class="fab fa-linkedin"></i>
         </a>
       </div>
-      <form class="contact__form">
+      <form method="post" class="contact__form">
         <label for="name">Your beatiful name</label>
-        <input id="name" type="text" placeholder="Your name" />
+        <input name="name" id="name" type="text" required placeholder="Your name" />
         <label for="email">Your email address</label>
-        <input id="email" type="email" placeholder="Your email" />
+        <input name="email" id="email" type="email" required placeholder="Your email" />
         <label for="message">Your message</label>
         <textarea
           id="message"
           cols="30"
+          required
+          name="message"
           rows="4"
           placeholder="How can we help you?"
         ></textarea>
-        <button type="submit">Send</button>
+        <button name="submit">Send</button>
       </form>
     </div>
     <div class="contact__twitter">

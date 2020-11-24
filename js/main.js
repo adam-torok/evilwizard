@@ -1,5 +1,30 @@
 $('document').ready(function() {
 
+
+    $(".modal-close").on('click',function(){
+        $(".modal-window").hide();
+    });
+
+    $(".contact__form").on('submit',function(e){
+        e.preventDefault();
+        form_data = $(this).serialize();
+        console.log(form_data);
+        $.ajax({
+            type: 'POST',
+            url: "./php/sendmail.php",
+            data: form_data
+        })
+          .done(function(){
+              $(".modal-window").show();
+              $(".modal-window").css("opacity",'1');
+                $(".modal-window").css("visibility",'visible');
+          })
+          .fail(function(){
+              alert("Some problem occured sending your email");
+          });
+    })
+   
+
     var navbar = document.querySelector(".navbar")
     var ham = document.querySelector(".navbar__hamburger")
     ham.addEventListener("click", toggleHamburger)
