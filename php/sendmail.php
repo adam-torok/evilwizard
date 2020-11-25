@@ -10,12 +10,13 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-$mail = new PHPMailer();
-$email = $_POST['email'];
-$name = $_POST['name'];
-$message = $_POST['message'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST)) {
+    $mail = new PHPMailer();
+    $email = $_POST['email'];
+    $name = $_POST['name'];
+    $message = $_POST['message'];
 
-try {
+    try {
     $mail->isSMTP();               
     $mail->CharSet = 'UTF-8';
     $mail->Host = 'smtp.gmail.com';
@@ -41,7 +42,10 @@ try {
     $mail->Body =  file_get_contents('to.html');
     $mail->isHTML(true);
     $mail->send();
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    } catch (Exception $e) {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
+}else{
+    header("Location: ../404.php");
 }
 ?>
